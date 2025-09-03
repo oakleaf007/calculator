@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container" id="cont">
+        <!-- <div style="color:#e9edf1;user-select: none;">CALCULATOR</div> -->
+        <div class="display">
+       
+        <input type="text" id="output" disabled >
+        </div>
+        <div style="font-size: 12px;  text-align: right; width:98%; color: #404963; user-select: none;">MADE IN CHINA</div>
+        <div id="btns">
+            <button data-action="clear" class="key C" id="btn">C</button>
+            <button data-action="back"  class="key del " id="btn">&#x232B</button>
+            <button data-action="operator" data-value="%" class="key percent" id="btn">%</button>
+            <button  data-action="operator" data-value="/" class="key divide" id="btn">/</button>
+
+           
+
+            <button data-action="number" data-value="1" class="key-num" id="btn">1</button>
+            <button data-action="number" data-value="2" class="key-num" id="btn">2</button>
+            <button data-action="number" data-value="3" class="key-num" id="btn">3</button>
+             <button data-action="operator" data-value="*" class="key multi" id="btn">*</button>
+             
+           
+
+            <button data-action="number" data-value="4" class="key-num" id="btn">4</button>
+            <button data-action="number" data-value="5" class="key-num" id="btn">5</button>
+            <button data-action="number" data-value="6" class="key-num" id="btn">6</button>
+             <button data-action="operator" data-value="+" class="key plus" id="btn">+</button>
+          
+
+            <button data-action="number" data-value="7" class="key-num" id="btn">7</button>
+            <button data-action="number" data-value="8" class="key-num"id="btn">8</button>
+            <button data-action="number" data-value="9" class="key-num" id="btn">9</button>
+             <button data-action="operator" data-value="-" class="key minus" id="btn">-</button>
+             <button data-action="number" data-value="22/7" class="key-num" id="btn">&pi;</button>
+            <button data-action="number" data-value="0" class="key-num" id="btn">0</button>
+            <button data-action="decimal" class="key dot" id="btn">.</button>
+            <button data-action="equal"  class="key equal" id="btn">=</button>
+             <button data-action="quack" class="key-num quack" id="btn">&#63;</button>
+             <button data-action="history" class="key-num his" id="btn">Clear History</button>
+             
+        </div>
+        <!-- <div style="color:#e9edf1; font-size: 14px; color: #424c67; user-select: none;" >OAK LEAF</div> -->
+    </div>
+ 
+    <div class="fun" id="msg">Holds single history</div>
+ <script src="click.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
