@@ -29,9 +29,8 @@ It has a clean interface with some useful extra features.
 ## 🖥️ Usage
 1. Click the number and operator buttons to enter an expression.  
 2. Press `=` to evaluate the result.  
-3. Press **History** to view the last calculation.  
-4. Use **Clear History** to reset stored results.  
-5. Use the **π button** for pi (22/7).  
+3. Use **Clear History** to reset stored results.  
+4. Use the **π button** for pi (22/7).  
 
 ---
 
