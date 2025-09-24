@@ -1,5 +1,6 @@
 # 🧮 Simple Calculator
-
+> ⚠️ **This repository is part of my personal learning process.**
+> 
 A lightweight calculator app that **follows BODMAS rule** for correct order of operations.  
 It has a clean interface with some useful extra features.  
 
