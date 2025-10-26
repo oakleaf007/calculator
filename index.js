@@ -25,12 +25,24 @@
 
     const lastChar = expression[expression.length-1];
 
+    // this is for replacing existing operator symbol 
     if(['+','-','*','/','%'].includes(lastChar)){
       expression = expression.slice(0,-1)+op;
       
     }else{
       expression += op;
     }
+    updateDisplay();
+  }
+
+  function percent(){
+    if(expression =='') return;
+
+    const parts = expression.split(/[\+\-\*\/]/);
+    const last = parts[parts.length-1];
+
+    const percentValue = Number(last)/100;
+    expression = expression.slice(0, -last.length)+ percentValue;
     updateDisplay();
   }
 
@@ -41,6 +53,7 @@
     const lastPart = part[part.length-1];
     if(!lastPart.includes('.')){
       expression+='.';
+
     }
     updateDisplay();
   }
@@ -59,6 +72,11 @@ function back(){
     updateDisplay();
   }
 }
+
+
+function roundRes(num){
+  return Math.round(num*1e12)/1e12;
+}
   // this is the master thing
   // use eval for simpler syntax
 let lastexp ='';
@@ -69,7 +87,8 @@ let msg = document.getElementById("msg");
 
   function calculate(){
     try{
-      const result = Function('"use strict"; return('+ expression +')')();
+      // const  finalExpression = expression.replace(/%/g,"/100");
+      const result = roundRes(Function('"use strict"; return('+ expression +')')());
     //  const result = eval(expression);
      lastexp = expression;
      res = result;
@@ -122,6 +141,8 @@ function quack(){
        case 'clear' : clear() ;
        break;
        case 'back' : back();
+       break;
+       case 'percent': percent();
        break;
        case 'history' : clrhis();
        break;
