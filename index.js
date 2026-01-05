@@ -35,6 +35,7 @@
     updateDisplay();
   }
 
+// fix for percentage issue
   function percent(){
     if(expression =='') return;
 
@@ -77,8 +78,8 @@ function back(){
 function roundRes(num){
   return Math.round(num*1e12)/1e12;
 }
-  // this is the master thing
-  // use eval for simpler syntax
+  
+  // you use eval for simpler syntax
 let lastexp ='';
 let res ='';
 
