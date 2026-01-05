@@ -86,11 +86,20 @@ let res ='';
 
 let msg = document.getElementById("msg");
 
+function sanitizeExpression(expr) {
+  return expr
+    // strip leading zeros from numbers: 09 → 9, 0004 → 4
+    .replace(/\b0+(?=\d)/g, '')
+    // fix decimals: .5 → 0.5
+    .replace(/\b\.(\d+)/g, '0.$1');
+}
+
   function calculate(){
     try{
-      // const  finalExpression = expression.replace(/%/g,"/100");
-      const result = roundRes(Function('"use strict"; return('+ expression +')')());
-    //  const result = eval(expression);
+      const safeExpr = sanitizeExpression(expression);
+      const result = roundRes(
+        Function('"use strict"; return(' + safeExpr + ')')()
+      );
      lastexp = expression;
      res = result;
     
