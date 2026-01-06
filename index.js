@@ -88,14 +88,26 @@ let msg = document.getElementById("msg");
 
   function calculate(){
     try{
+      // FIX: Apply regex to remove leading zeros before evaluation
+      // Example: "05 + 007" becomes "5 + 7"
+      const cleanedExpression=expression.replace(/\b0+(?=\d)/g, '');
+
+      
       // const  finalExpression = expression.replace(/%/g,"/100");
-      const result = roundRes(Function('"use strict"; return('+ expression +')')());
+      //using cleaned version for the math logic
+      const result = roundRes(Function('"use strict"; return('+ cleanedExpression +')')());
     //  const result = eval(expression);
-     lastexp = expression;
+     lastexp = expression; //keeping the original for history display
      res = result;
+
+     //easter egg enhancement
+     let quote="";
+     if(result===69) quote = " - Nice.";
+     else if (result === 420) quote = " - Blaze it.";
+     else if (result === Infinity || isNaN(result)) quote = " - Really? Divide by zero?";
     
  
-  msg.textContent = `${lastexp} = ${res}`;
+      msg.textContent = `${lastexp} = ${res}${quote}`;
       expression = String(result);
     }
     catch{
